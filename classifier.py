@@ -71,9 +71,9 @@ def classify():
 
         else: pass
     print ("Finsihed movind labeled data")
-    print('There are a total of {} annotated images; {} are jpg and {} are png'.format((jpg_annotaned_image_counter + png_annotaned_image_counter), jpg_annotaned_image_counter, png_annotaned_image_counter))
-    print('There are a total of {} uannotated images'.format(unnotaned_image_counter))
-    print('There are a total of {} .txt files'.format(len(txt_files)))
+    print('There are a total of {} annotated images; {} are jpg and {} are png.'.format((jpg_annotaned_image_counter + png_annotaned_image_counter), jpg_annotaned_image_counter, png_annotaned_image_counter))
+    print('There are a total of {} unnotated images.'.format(unnotaned_image_counter))
+    print('There are a total of {} .txt files.'.format(len(txt_files)))
 
 def move_file(file_name, dest='labeled'):
     if dest == "unlabeled":
