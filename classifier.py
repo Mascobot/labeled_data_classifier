@@ -7,7 +7,7 @@
 import os
 import shutil
 
-#Only input required is the path to the folder containing the images:
+#Only input required is the path to the folder containing the dataset:
 file_path = "path_to_dataset"
 
 
