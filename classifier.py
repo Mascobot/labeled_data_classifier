@@ -82,6 +82,6 @@ def move_file(file_name, dest='labeled'):
         shutil.move(os.path.join(file_path, file_name), os.path.join(labeled_data_path, file_name))
         
     
-if __main__ == '__main__':
+if __name__ == '__main__':
     classify()
     
