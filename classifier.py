@@ -8,7 +8,7 @@ import os
 import shutil
 
 #Only input required is the path to the folder containing the dataset:
-file_path = "path_to_dataset"
+file_path = "/Users/mm/Downloads/video_frame_classifier-master/Class_Images"
 
 
 labeled_data_path = os.path.join(file_path, 'labeled_data')
@@ -24,9 +24,13 @@ def classify():
     print('Saving labeled data at: ', labeled_data_path)
     print('Saving unlabeled data at: ', unlabeled_data_path)
     txt_files = []
+    empty_txt_files = 0
     for txt_filename in os.listdir(file_path):
         if ".txt" in txt_filename:
-            txt_files.append(txt_filename)
+            if os.stat(txt_filename).st_size == 0:
+                empty_txt_files += 1
+            else:
+                txt_files.append(txt_filename)
 
     jpg_annotaned_image_counter = 0
     png_annotaned_image_counter = 0
@@ -73,7 +77,7 @@ def classify():
     print ("Finsihed movind labeled data")
     print('There are a total of {} annotated images; {} are jpg and {} are png.'.format((jpg_annotaned_image_counter + png_annotaned_image_counter), jpg_annotaned_image_counter, png_annotaned_image_counter))
     print('There are a total of {} unnotated images.'.format(unnotaned_image_counter))
-    print('There are a total of {} .txt files.'.format(len(txt_files)))
+    print('There are a total of {} .txt files. {} are empty'.format(len(txt_files), empty_txt_files))
 
 def move_file(file_name, dest='labeled'):
     if dest == "unlabeled":
@@ -84,4 +88,3 @@ def move_file(file_name, dest='labeled'):
     
 if __name__ == '__main__':
     classify()
-    
