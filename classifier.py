@@ -8,7 +8,7 @@ import os
 import shutil
 
 #Only input required is the path to the folder containing the dataset:
-file_path = "/Users/mm/Downloads/video_frame_classifier-master/Class_Images"
+file_path = ""
 
 
 labeled_data_path = os.path.join(file_path, 'labeled_data')
